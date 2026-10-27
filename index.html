@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title> Проверка точки</title>
+
+  <link rel="stylesheet" href="styles.css"> <!-- link - связывает страницу с внешним ресурсом -->
+  <!-- rel - указывает что это стили, href - путь к этому файлу -->
+  <script src="graph.js" defer></script>
+  <script src="history.js" defer></script>
+  <script src="check.js" defer></script>
+  <!-- script - для подключения js, defer - подключает js и выполняет после чтения html -->
+</head>
+<body>
+  <header>
+    <p>ФИО: Рзаев Артур Русланович</p>
+    <p>Группа: P3132</p>
+    <p>Вариант: 22720</p>
+  </header>
+  <main>
+    <h1>Проверка точки</h1>
+
+    <form id="point-form" method="post"> <!-- поля ввода + кнопка отправки -->
+
+      <label for="x">Координата X (от −5 до 3):</label>
+      <input type="text" id="x" name="x" placeholder="Например: -1.5" maxlength="14">
+
+      <div>
+        <p>Координата Y:</p>
+        <div id="y-buttons">
+          <button type="button" class="y-btn" data-y="-4">−4</button>
+          <button type="button" class="y-btn" data-y="-3">−3</button>
+          <button type="button" class="y-btn" data-y="-2">−2</button>
+          <button type="button" class="y-btn" data-y="-1">−1</button>
+          <button type="button" class="y-btn" data-y="0">0</button>
+          <button type="button" class="y-btn" data-y="1">1</button>
+          <button type="button" class="y-btn" data-y="2">2</button>
+          <button type="button" class="y-btn" data-y="3">3</button>
+          <button type="button" class="y-btn" data-y="4">4</button>
+        </div>
+      </div>
+
+      <div>
+        <p>Радиус R:</p>
+
+        <label><input type="radio" name="r" value="1"> 1</label>
+        <label><input type="radio" name="r" value="2" checked> 2</label>
+        <label><input type="radio" name="r" value="3"> 3</label>
+        <label><input type="radio" name="r" value="4"> 4</label>
+        <label><input type="radio" name="r" value="5"> 5</label>
+      </div>
+
+      <button type="submit">Проверить</button>
+      <!-- кнопка отправки + нажатие отправляет форму(submit) -->
+    </form>
+
+    <canvas id="graph" width="500" height="500"></canvas>
+
+    <p id="result"></p>
+    <p id="server-info"></p>
+    <table>
+      <caption>История проверок</caption>
+
+      <thead>
+      <tr>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Результат</th>
+        <th>Дата и время</th>
+        <th>Время работы, мкс</th>
+      </tr>
+      </thead>
+
+      <tbody id="results-body">
+      <!-- Сюда JavaScript будет добавлять строки -->
+      </tbody>
+    </table>
+  </main>
+  <div id="screamer" class="screamer" hidden>
+    <img src="https://webcalypt.cloud/storage/memes/19148/20252/uV1Yztk558PABDzBKcQcn2oN9c3WsSElJ6VyX9svgOy6Ikfzkez5w6X5NRbHQQUJ868DZT8u0M9V51WR87SvGDPNWrPKMnbTKuden7BLRtCkJA41jORbP7wVHbhgl9EO.jpeg" alt="">
+  </div>
+</body>
+</html>
